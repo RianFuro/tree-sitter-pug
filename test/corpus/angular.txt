@@ -50,6 +50,23 @@ some-tag((attr)='console.log("test")')
           (javascript))))))
 
 ============
+Angular banana box
+============
+
+some-tag([(attr)]='hello')
+
+---
+
+(source_file
+  (tag
+    (tag_name)
+    (attributes
+      (attribute
+        (attribute_name)
+        (quoted_javascript
+          (javascript))))))
+
+============
 Angular directive
 ============
 

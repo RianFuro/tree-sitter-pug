@@ -2,6 +2,10 @@
 // TODO: support multiple levels of function calls in pug js attrs: `tag(attr=true.call(false.toString()))`
 // TODO: don't break if there are singular { or # in content
 // TODO: support #[p(prop)] nested pug syntax
+// TODO: support Angular's weird `let x as first; let y of items` template directive syntax.
+//       documentation here: https://angular.io/guide/structural-directives#structural-directive-syntax-reference
+//       Currently, it is just parsed as $.javascript, but this is not valid javascript, so parsing is broken,
+//       but doesn't break any of the pug syntax tree.
 module.exports = grammar({
   name: "pug",
   externals: ($) => [$._newline, $._indent, $._dedent],

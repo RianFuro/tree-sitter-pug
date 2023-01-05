@@ -10,6 +10,7 @@
 //       documentation here: https://angular.io/guide/structural-directives#structural-directive-syntax-reference
 //       Currently, it is just parsed as $.javascript, but this is not valid javascript, so parsing is broken,
 //       but doesn't break any of the pug syntax tree.
+// TODO: rework regexes. There are too many different regexes that all handle different special cases.
 module.exports = grammar({
   name: "pug",
   externals: ($) => [$._newline, $._indent, $._dedent],

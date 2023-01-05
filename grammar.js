@@ -1,5 +1,9 @@
 // TODO: support `tag(attr='hello' + goodbye)`
 // TODO: support multiple levels of function calls in pug js attrs: `tag(attr=true.call(false.toString()))`
+//       I think something a bit like:
+//         value = ($) => seq(/.*/, optional(seq('(', $.value, ')')))
+//       where the content of brackets is another instance of the same node. Does treesitter even support this?
+//       The entire node will have to be aliased as $.javascript, this will just make sure no pug is matched too.
 // TODO: don't break if there are singular { or # in content
 // TODO: support #[p(prop)] nested pug syntax
 // TODO: support Angular's weird `let x as first; let y of items` template directive syntax.

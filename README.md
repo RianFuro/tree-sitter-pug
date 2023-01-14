@@ -1,15 +1,15 @@
 # Tree-sitter-pug
 
-This is a tree-sitter parser grammar for the [pug](https://github.com/pugjs/pug) language.
-
-This is intended to be used along side Angular, but my aim is to eventually support all pug features.
+This is a general tree-sitter parser grammar for the [pug](https://github.com/pugjs/pug) language with some extra features built in for Angular and Vue development.
 
 ## Current state
 
-Everything currently included is relatively bug-free, but I'm not happy with the structure of some of the rules, so the structure will change before I'm finished.
+Everything currently included is relatively bug-free, but the structure/name of some rules may change before we declare this parser "complete".
 
-There is an incomplete list of todos in `grammar.js`, but the summary is: all the basics are supported; only some of the complex syntaxes shouldn't be used alongside Angular are missing.
-I have tests for every scenario supported, so you can just have a look through `./test/corpus/*.txt`.
+There is list of todos at the top of `grammar.js`, but the summary is: all of the basics are supported.
+There are tests for every scenario supported, so you can just have a look through `./test/corpus/*.txt` to see exactly which scenarios are supported and have been tested.
+
+Feel free to open an issue/pull request if there's something missing/broken.
 
 ## Developing
 

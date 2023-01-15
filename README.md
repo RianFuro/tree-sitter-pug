@@ -1,26 +1,17 @@
 # Tree-sitter-pug
 
-This is a tree-sitter parser grammar for the [pug](https://github.com/pugjs/pug) language.
+This is a general tree-sitter parser grammar for the [pug](https://github.com/pugjs/pug) language with some extra features built in for Angular and Vue development.
 
-For now this is intended to be used **for a vue+pug** setup, as the control flow operations aren't recognized by the parser (since they are not used in conjunction with vue).
+## Current state
 
-## Contributing
+Everything currently included is relatively bug-free, but the structure/name of some rules may change before we declare this parser "complete".
 
-If you'd like to contribute the missing grammar, feel free to fork/PR:
+There is list of todos at the top of `grammar.js`, but the summary is: all of the basics are supported.
+There are tests for every scenario supported, so you can just have a look through `./test/corpus/*.txt` to see exactly which scenarios are supported and have been tested.
 
-currently missing:
+Feel free to open an issue/pull request if there's something missing/broken.
 
-- [ ] Control Flow (if, each, else, case, include...)
-  https://pugjs.org/language/conditionals.html
-  https://pugjs.org/language/includes.html
-- [ ] inline Javascript code with "- "
-- [ ] output Javascript code with "= "
-  https://pugjs.org/language/code.html
-- [ ] inline Javascript code with "#{...}"
-- [ ] Filters
-
-
-To add tests, check out `./test/corpus/*.txt`
+## Developing
 
 How to run & test:
 

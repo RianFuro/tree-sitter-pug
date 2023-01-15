@@ -16,7 +16,15 @@
           "named": true
         },
         {
+          "type": "javascript",
+          "named": true
+        },
+        {
           "type": "quoted_attribute_value",
+          "named": true
+        },
+        {
+          "type": "quoted_javascript",
           "named": true
         }
       ]
@@ -43,7 +51,7 @@
     }
   },
   {
-    "type": "children",
+    "type": "block_append",
     "named": true,
     "fields": {},
     "children": {
@@ -51,15 +59,76 @@
       "required": true,
       "types": [
         {
-          "type": "content",
+          "type": "block_name",
           "named": true
         },
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "block_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block_name",
+          "named": true
+        },
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "block_prepend",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "block_name",
+          "named": true
+        },
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "buffered_code",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
         {
           "type": "javascript",
-          "named": true
-        },
-        {
-          "type": "pipe_content",
           "named": true
         },
         {
@@ -70,9 +139,161 @@
     }
   },
   {
+    "type": "case",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "javascript",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "when",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "children",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "block_append",
+          "named": true
+        },
+        {
+          "type": "block_definition",
+          "named": true
+        },
+        {
+          "type": "block_prepend",
+          "named": true
+        },
+        {
+          "type": "buffered_code",
+          "named": true
+        },
+        {
+          "type": "case",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "conditional",
+          "named": true
+        },
+        {
+          "type": "content",
+          "named": true
+        },
+        {
+          "type": "doctype",
+          "named": true
+        },
+        {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "extends",
+          "named": true
+        },
+        {
+          "type": "filter",
+          "named": true
+        },
+        {
+          "type": "include",
+          "named": true
+        },
+        {
+          "type": "javascript",
+          "named": true
+        },
+        {
+          "type": "pipe",
+          "named": true
+        },
+        {
+          "type": "script_block",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        },
+        {
+          "type": "unbuffered_code",
+          "named": true
+        },
+        {
+          "type": "unescaped_buffered_code",
+          "named": true
+        },
+        {
+          "type": "while",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "comment",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "conditional",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "javascript",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "filter",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "doctype",
@@ -90,7 +311,218 @@
     }
   },
   {
-    "type": "pipe_content",
+    "type": "each",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "else",
+          "named": true
+        },
+        {
+          "type": "iteration_iterator",
+          "named": true
+        },
+        {
+          "type": "iteration_variable",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "else",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "extends",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "filename",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "filter",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attributes",
+          "named": true
+        },
+        {
+          "type": "content",
+          "named": true
+        },
+        {
+          "type": "filter_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "include",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "filename",
+          "named": true
+        },
+        {
+          "type": "filter",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "iteration_iterator",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "javascript",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "iteration_variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "javascript",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "javascript",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "mixin_attributes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "attribute_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mixin_definition",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        },
+        {
+          "type": "mixin_attributes",
+          "named": true
+        },
+        {
+          "type": "mixin_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "mixin_use",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "attribute",
+          "named": true
+        },
+        {
+          "type": "mixin_name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "pipe",
     "named": true,
     "fields": {},
     "children": {
@@ -124,6 +556,36 @@
     }
   },
   {
+    "type": "quoted_javascript",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "javascript",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "script_block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "javascript",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "source_file",
     "named": true,
     "fields": {},
@@ -132,7 +594,31 @@
       "required": false,
       "types": [
         {
+          "type": "block_append",
+          "named": true
+        },
+        {
+          "type": "block_definition",
+          "named": true
+        },
+        {
+          "type": "block_prepend",
+          "named": true
+        },
+        {
+          "type": "buffered_code",
+          "named": true
+        },
+        {
+          "type": "case",
+          "named": true
+        },
+        {
           "type": "comment",
+          "named": true
+        },
+        {
+          "type": "conditional",
           "named": true
         },
         {
@@ -140,7 +626,51 @@
           "named": true
         },
         {
+          "type": "each",
+          "named": true
+        },
+        {
+          "type": "extends",
+          "named": true
+        },
+        {
+          "type": "filter",
+          "named": true
+        },
+        {
+          "type": "include",
+          "named": true
+        },
+        {
+          "type": "mixin_definition",
+          "named": true
+        },
+        {
+          "type": "mixin_use",
+          "named": true
+        },
+        {
+          "type": "pipe",
+          "named": true
+        },
+        {
+          "type": "script_block",
+          "named": true
+        },
+        {
           "type": "tag",
+          "named": true
+        },
+        {
+          "type": "unbuffered_code",
+          "named": true
+        },
+        {
+          "type": "unescaped_buffered_code",
+          "named": true
+        },
+        {
+          "type": "while",
           "named": true
         }
       ]
@@ -156,6 +686,10 @@
       "types": [
         {
           "type": "attributes",
+          "named": true
+        },
+        {
+          "type": "buffered_code",
           "named": true
         },
         {
@@ -179,11 +713,103 @@
           "named": true
         },
         {
+          "type": "self_close_slash",
+          "named": true
+        },
+        {
           "type": "tag",
           "named": true
         },
         {
           "type": "tag_name",
+          "named": true
+        },
+        {
+          "type": "unescaped_buffered_code",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unbuffered_code",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "javascript",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "unescaped_buffered_code",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "javascript",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "when",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "javascript",
+          "named": true
+        },
+        {
+          "type": "keyword",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "while",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "children",
+          "named": true
+        },
+        {
+          "type": "iteration_iterator",
+          "named": true
+        },
+        {
+          "type": "keyword",
           "named": true
         }
       ]
@@ -194,7 +820,19 @@
     "named": false
   },
   {
+    "type": "!=",
+    "named": false
+  },
+  {
     "type": "\"",
+    "named": false
+  },
+  {
+    "type": "#",
+    "named": false
+  },
+  {
+    "type": "#{",
     "named": false
   },
   {
@@ -210,7 +848,15 @@
     "named": false
   },
   {
+    "type": "+",
+    "named": false
+  },
+  {
     "type": ",",
+    "named": false
+  },
+  {
+    "type": "-",
     "named": false
   },
   {
@@ -219,6 +865,10 @@
   },
   {
     "type": "//",
+    "named": false
+  },
+  {
+    "type": "//-",
     "named": false
   },
   {
@@ -238,11 +888,11 @@
     "named": true
   },
   {
-    "type": "class",
+    "type": "block_name",
     "named": true
   },
   {
-    "type": "content",
+    "type": "class",
     "named": true
   },
   {
@@ -254,11 +904,31 @@
     "named": true
   },
   {
+    "type": "filename",
+    "named": true
+  },
+  {
+    "type": "filter_name",
+    "named": true
+  },
+  {
     "type": "id",
     "named": true
   },
   {
-    "type": "javascript",
+    "type": "keyword",
+    "named": true
+  },
+  {
+    "type": "mixin_name",
+    "named": true
+  },
+  {
+    "type": "script.",
+    "named": false
+  },
+  {
+    "type": "self_close_slash",
     "named": true
   },
   {
@@ -266,11 +936,19 @@
     "named": true
   },
   {
+    "type": "{",
+    "named": false
+  },
+  {
     "type": "{{",
     "named": false
   },
   {
     "type": "|",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   },
   {

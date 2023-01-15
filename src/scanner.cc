@@ -15,16 +15,6 @@ struct Scanner {
   unsigned serialize(char *buffer) {
     size_t i = 0;
 
-    // TODO: think about... isn't that problematic?
-    /*
-    size_t stack_size = delimiter_stack.size();
-    if (stack_size > UINT8_MAX) stack_size = UINT8_MAX;
-    buffer[i++] = stack_size;
-
-    memcpy(&buffer[i], delimiter_stack.data(), stack_size);
-    i += stack_size;
-    */
-
     vector<uint16_t>::iterator iter = indent_length_stack.begin() + 1,
                                end = indent_length_stack.end();
 
@@ -63,6 +53,9 @@ struct Scanner {
 
     if (lexer->lookahead && lexer->get_column(lexer) == 0) {
       uint32_t indent_length = 0;
+
+      // Indent tokens are zero width
+      lexer->mark_end(lexer);
 
       for (;;) {
         if (lexer->lookahead == ' ') {

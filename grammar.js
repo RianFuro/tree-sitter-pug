@@ -1,7 +1,16 @@
 // TODO: support `tag(attr='hello' + goodbye)`
 // TODO: support multiple levels of function calls in pug js attrs: `tag(attr=true.call(false.toString()))`
+//       I think something a bit like:
+//         value = ($) => seq(/.*/, optional(seq('(', $.value, ')')))
+//       where the content of brackets is another instance of the same node. Does treesitter even support this?
+//       The entire node will have to be aliased as $.javascript, this will just make sure no pug is matched too.
 // TODO: don't break if there are singular { or # in content
 // TODO: support #[p(prop)] nested pug syntax
+// TODO: support Angular's weird `let x as first; let y of items` template directive syntax.
+//       documentation here: https://angular.io/guide/structural-directives#structural-directive-syntax-reference
+//       Currently, it is just parsed as $.javascript, but this is not valid javascript, so parsing is broken,
+//       but doesn't break any of the pug syntax tree.
+// TODO: rework regexes. There are too many different regexes that all handle different special cases.
 module.exports = grammar({
   name: "pug",
   externals: ($) => [$._newline, $._indent, $._dedent],
@@ -529,9 +538,10 @@ module.exports = grammar({
 
     angular_attribute_name: () =>
       choice(
-        /\[[\w@\-:\.]+\]/,
-        /\([\w@\-:\.]+\)/,
-        /\*[\w@\-:\.]+/,
+        /\[[\w@\-:\.]+\]/, // [input]
+        /\([\w@\-:\.]+\)/, // (output)
+        /\[\([\w@\-:\.]+\)\]/, // [(both)]
+        /\*[\w@\-:\.]+/, // *directive
       ),
     attribute_name: () => /#?[\w@\-:]+/,
 
